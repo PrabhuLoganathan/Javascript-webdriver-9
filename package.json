@@ -1,0 +1,25 @@
+{
+  "name": "autochromedriver",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "repository": "https://github.com/lucaswerner90/autochromedriver",
+  "author": "lucaswerner90 <wernerlucas12@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/extract-zip": "^1.6.2",
+    "@types/node": "^9.4.7",
+    "@types/unzip": "^0.1.0",
+    "nodemon": "^1.17.2",
+    "tsc": "^1.20150623.0",
+    "tslint": "^5.9.1",
+    "tslint-config-airbnb": "^5.7.0",
+    "typescript": "^2.7.2"
+  },
+  "dependencies": {
+    "unzip": "^0.1.11"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/nodemon ./bin/index.js",
+    "tsc": "./node_modules/.bin/tsc --watch"
+  }
+}
