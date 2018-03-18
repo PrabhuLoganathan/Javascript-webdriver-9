@@ -25,4 +25,5 @@ If there's any problem with the package, questions or even improvements that cou
 My name is Lucas Werner and I've decided to start this project up to try to improve the task of download an appropiate ChromeDriver version, that it's needed for some libraries like Nightwatch or Selenium.
 I'm a computer engineer working in Oracle Cloud in Prague. I love my job and I'm focused on JS technologies, both frontend and backend technologies ( or at least I try ).
 
-And last but not least, of course **Feel free to collaborate with this project, any help would be appreciate :)**
+And last but not least, of course 
+**Feel free to collaborate with this project, any help would be appreciated :)**
