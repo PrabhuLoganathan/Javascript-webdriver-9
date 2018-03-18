@@ -1,11 +1,11 @@
 {
   "name": "autochromedriver",
-  "author":{
-    "name":"Lucas Werner",
-    "email":"wernerlucas12@gmail.com",
-    "url":"https://www.linkedin.com/in/lucas-werner/"
+  "author": {
+    "name": "Lucas Werner",
+    "email": "wernerlucas12@gmail.com",
+    "url": "https://www.linkedin.com/in/lucas-werner/"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "bin/index.js",
   "keywords": [
     "chromedriver",
@@ -26,14 +26,14 @@
     "tslint-config-airbnb": "^5.7.0",
     "typescript": "^2.7.2"
   },
-  "bin":{
-    "chromedriver":"lib/chromedriver"
+  "bin": {
+    "chromedriver": "lib/chromedriver"
   },
   "dependencies": {
     "unzip": "^0.1.11"
   },
   "scripts": {
-    "install":"node bin/index.js",
+    "install": "node bin/index.js",
     "start": "./node_modules/.bin/nodemon ./bin/index.js",
     "tsc": "./node_modules/.bin/tsc --watch"
   }
