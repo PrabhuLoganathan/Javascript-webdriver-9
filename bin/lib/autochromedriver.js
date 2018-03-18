@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 const join = require('path').join;
 const spawn = require('child_process').spawn;

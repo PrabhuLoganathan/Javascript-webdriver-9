@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const join = require('path').join;
 const spawn = require('child_process').spawn;
 const chmodSync = require('fs').chmodSync;
