@@ -5,7 +5,7 @@
     "email": "wernerlucas12@gmail.com",
     "url": "https://www.linkedin.com/in/lucas-werner/"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "bin/index.js",
   "keywords": [
     "chromedriver",
