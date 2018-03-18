@@ -1,9 +1,20 @@
 {
   "name": "autochromedriver",
+  "author":{
+    "name":"Lucas Werner",
+    "email":"wernerlucas12@gmail.com",
+    "url":"https://www.linkedin.com/in/lucas-werner/"
+  },
   "version": "1.0.0",
   "main": "bin/index.js",
+  "keywords": [
+    "chromedriver",
+    "selenium",
+    "autodownload"
+  ],
+  "description": "Auto download the ChromeDriver version that fits your Chrome browser",
+  "homepage": "https://github.com/lucaswerner90/autochromedriver",
   "repository": "https://github.com/lucaswerner90/autochromedriver",
-  "author": "lucaswerner90 <wernerlucas12@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/extract-zip": "^1.6.2",
@@ -15,10 +26,12 @@
     "tslint-config-airbnb": "^5.7.0",
     "typescript": "^2.7.2"
   },
+  "bin":"./lib/chromedriver",
   "dependencies": {
     "unzip": "^0.1.11"
   },
   "scripts": {
+    "install":"node bin/index.js",
     "start": "./node_modules/.bin/nodemon ./bin/index.js",
     "tsc": "./node_modules/.bin/tsc --watch"
   }

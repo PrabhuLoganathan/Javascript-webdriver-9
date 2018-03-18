@@ -19,7 +19,13 @@ export default class DriverZIP {
    * @memberof DriverZIP
    */
   private OSArch: string = CONSTANTS.OS_ARCH[CONSTANTS.PLATFORM];
-  // tslint:disable-next-line:max-line-length
+  /**
+   * 
+   * 
+   * @private
+   * @type {string}
+   * @memberof DriverZIP
+   */
   private FILE_URL: string = `${CONSTANTS.CHROMEDRIVER_API}{version}/chromedriver_${this.OSArch}.zip`;
   /**
    * 
@@ -45,12 +51,13 @@ export default class DriverZIP {
    */
   public getZIP(version:string = ''): Promise<any> {
     const zipURL: string = this.FILE_URL.replace('{version}', version);
-    console.log(zipURL);
+    
     return new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
       GET_REQUEST(zipURL, (res) => {
         
         res.pipe(UNZIP.Extract({ path: this.FILE_ROUTE })).on('close', () => {
+          console.log(`ChromeDriver ${version} installed correctly...`);
           resolve(true);
         });
 

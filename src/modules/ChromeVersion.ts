@@ -33,7 +33,7 @@ export default class ChromeVersion{
   private regexps: OS_REGEXP = {
     darwin: /(Google Chrome) (\d+)/g,
     win32: / /g,
-    linux: / /g,
+    linux: /(Google Chrome) (\d+)/g,
   };
   /**
    * 
@@ -61,8 +61,13 @@ export default class ChromeVersion{
    */
   public getChromeVersion(): Promise<number> {
     const command = spawn(this.commands[this.currentOS], ['--version']);
-    let response:string = '';
+
+    let response: string = '';
+    
     return new Promise((resolve, reject) => {
+
+      if (this.currentOS === 'win32') resolve(CONSTANTS.DEFAULT_CHROME_VERSION);
+
       command.stdout.on('data', (data: Buffer) => {
         const stringData: string = data.toString();
         response = this.regexps[this.currentOS].exec(stringData)[2];

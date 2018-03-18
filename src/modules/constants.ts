@@ -1,5 +1,8 @@
+import { join } from 'path';
+
 export const PLATFORM: NodeJS.Platform = process.platform;
-export const ZIP_ROUTE: string = '.';
+export const DEFAULT_CHROME_VERSION: number = 65;
+export const ZIP_ROUTE: string = join(process.cwd(),'lib');
 export const CHROMEDRIVER_API: string = 'https://chromedriver.storage.googleapis.com/';
 export const LATEST_RELEASE_PATH: string = 'LATEST_RELEASE';
 export const VERSION_PATH: string = 'index.html?path={version}';

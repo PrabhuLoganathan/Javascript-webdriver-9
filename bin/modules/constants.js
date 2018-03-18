@@ -1,7 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const path_1 = require("path");
 exports.PLATFORM = process.platform;
-exports.ZIP_ROUTE = '.';
+exports.DEFAULT_CHROME_VERSION = 65;
+exports.ZIP_ROUTE = path_1.join(process.cwd(), 'lib');
 exports.CHROMEDRIVER_API = 'https://chromedriver.storage.googleapis.com/';
 exports.LATEST_RELEASE_PATH = 'LATEST_RELEASE';
 exports.VERSION_PATH = 'index.html?path={version}';

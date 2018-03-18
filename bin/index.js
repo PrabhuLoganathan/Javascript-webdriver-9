@@ -18,10 +18,11 @@ chrome.getChromeVersion()
     chromeDriver.parseNotesResponse(notes);
     return chromeDriver.getSuitableVersionForYourChrome(chromeVersion);
 })
-    .then((chromeDriverVersion) => {
-    driverZIP.getZIP(chromeDriverVersion);
+    .then((chromeDriverVersion) => driverZIP.getZIP(chromeDriverVersion))
+    .then(() => {
+    process.exit(0);
 })
     .catch((error) => {
     console.error(error);
+    process.exit(1);
 });
-chromeDriver.getLatestVersionNumber();

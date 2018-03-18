@@ -8,7 +8,6 @@ const driverZIP: DriverZIP = new DriverZIP();
 
 let chromeVersion: number = 0;
 
-
 chrome.getChromeVersion()
   // Get Chrome version installed within the machine
   .then((value: number) => { chromeVersion = value; })
@@ -21,12 +20,11 @@ chrome.getChromeVersion()
     return chromeDriver.getSuitableVersionForYourChrome(chromeVersion);
   })
   // Get ChromeDriver zip
-  .then((chromeDriverVersion: string) => {
-    driverZIP.getZIP(chromeDriverVersion);
+  .then((chromeDriverVersion: string) => driverZIP.getZIP(chromeDriverVersion))
+  .then(() => {
+    process.exit(0);
   })
   .catch((error) => {
     console.error(error);
+    process.exit(1);
   });
-
-chromeDriver.getLatestVersionNumber();
-  

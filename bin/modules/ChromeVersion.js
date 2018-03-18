@@ -39,7 +39,7 @@ class ChromeVersion {
         this.regexps = {
             darwin: /(Google Chrome) (\d+)/g,
             win32: / /g,
-            linux: / /g,
+            linux: /(Google Chrome) (\d+)/g,
         };
         /**
          *
@@ -64,6 +64,8 @@ class ChromeVersion {
         const command = child_process_1.spawn(this.commands[this.currentOS], ['--version']);
         let response = '';
         return new Promise((resolve, reject) => {
+            if (this.currentOS === 'win32')
+                resolve(CONSTANTS.DEFAULT_CHROME_VERSION);
             command.stdout.on('data', (data) => {
                 const stringData = data.toString();
                 response = this.regexps[this.currentOS].exec(stringData)[2];
