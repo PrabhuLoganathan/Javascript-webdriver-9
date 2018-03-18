@@ -1,6 +1,6 @@
-import { join } from 'path';
-import { spawn } from 'child_process';
-import { chmodSync } from 'fs';
+const join = require('path').join;
+const spawn = require('child_process').spawn;
+const chmodSync = require('fs').chmodSync;
 
 const FILE_PATH = process.platform === 'win32' ? join(process.cwd(), 'lib', 'chromedriver.exe') : join(process.cwd(), 'lib', 'chromedriver');
 
