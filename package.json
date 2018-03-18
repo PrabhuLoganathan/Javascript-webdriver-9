@@ -27,7 +27,7 @@
     "typescript": "^2.7.2"
   },
   "bin": {
-    "chromedriver": "lib/chromedriver"
+    "chromedriver": "./bin/lib/autochromedriver.js"
   },
   "dependencies": {
     "unzip": "^0.1.11"
