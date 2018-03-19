@@ -16,7 +16,7 @@ npm install autochromedriver
 ```
 
 ## Use of the package
-The package will download a chromedriver executable inside the node_modules/.bin/ folder based on your Chrome version. So you can reference it inside your code.
+The package **will download a Chromedriver executable inside the node_modules/.bin/ folder** based on your Chrome version. So you can reference it inside your code.
 
 ## Issues or Questions
 If there's any problem with the package, questions or even improvements that could be included, feel free to share your thoughts inside the Issue section
