@@ -6,7 +6,10 @@ type OS_REGEXP = {
 };
 
 type OS_COMMANDS = {
-  [key: string]: string,
+  [key: string]: {
+    main: string,
+    params: string[]
+  },
 };
 /**
  * 
@@ -32,7 +35,7 @@ export default class ChromeVersion{
    */
   private regexps: OS_REGEXP = {
     darwin: /(Google Chrome) (\d+)/g,
-    win32: / /g,
+    win32: /(Google Chrome) (\d+)/g,
     linux: /(Google Chrome) (\d+)/g,
   };
   /**
@@ -43,9 +46,9 @@ export default class ChromeVersion{
    * @memberof ChromeVersion
    */
   private commands: OS_COMMANDS = {
-    darwin: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome',
-    win32: '',
-    linux: 'google-chrome',
+    darwin: {main:'/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome', params:[]},
+    win32: {main: 'start', params: ['chrome']},
+    linux: { main: 'google-chrome' , params: []},
   };
   /**
    * Creates an instance of ChromeVersion.
@@ -60,7 +63,8 @@ export default class ChromeVersion{
    * @memberof ChromeVersion
    */
   public getChromeVersion(): Promise<number> {
-    const command = spawn(this.commands[this.currentOS], ['--version']);
+    const OSCommand = this.commands[this.currentOS];
+    const command = spawn(OSCommand.main, [...OSCommand.params,'--version']);
 
     let response: string = '';
     
@@ -80,7 +84,6 @@ export default class ChromeVersion{
       command.on('close', (code: number) => {
         if (code === 0) resolve(parseInt(response));
         else reject('Child process exit with an error code');
-        
       });
 
     });

@@ -38,7 +38,7 @@ class ChromeVersion {
          */
         this.regexps = {
             darwin: /(Google Chrome) (\d+)/g,
-            win32: / /g,
+            win32: /(Google Chrome) (\d+)/g,
             linux: /(Google Chrome) (\d+)/g,
         };
         /**
@@ -49,9 +49,9 @@ class ChromeVersion {
          * @memberof ChromeVersion
          */
         this.commands = {
-            darwin: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome',
-            win32: '',
-            linux: 'google-chrome',
+            darwin: { main: '/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome', params: [] },
+            win32: { main: 'start', params: ['chrome'] },
+            linux: { main: 'google-chrome', params: [] },
         };
     }
     /**
@@ -61,7 +61,8 @@ class ChromeVersion {
      * @memberof ChromeVersion
      */
     getChromeVersion() {
-        const command = child_process_1.spawn(this.commands[this.currentOS], ['--version']);
+        const OSCommand = this.commands[this.currentOS];
+        const command = child_process_1.spawn(OSCommand.main, [...OSCommand.params, '--version']);
         let response = '';
         return new Promise((resolve, reject) => {
             if (this.currentOS === 'win32')
