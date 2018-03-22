@@ -21,11 +21,4 @@ The package **will download a Chromedriver executable inside the node_modules/.b
 ## Issues or Questions
 If there's any problem with the package, questions or even improvements that could be included, feel free to share your thoughts inside the Issue section
 
-## About the author
-My name is Lucas Werner and I've decided to start this project up to try to improve the task of download an appropiate ChromeDriver version, that it's needed for some libraries like Nightwatch or Selenium.
-I'm a computer engineer working in Oracle Cloud in Prague. 
-
-I love my job and I'm focused on JS technologies, both frontend and backend technologies ( or at least I try ).
-
-And last but not least, of course 
 **Feel free to collaborate with this project, any help would be appreciated :)**
